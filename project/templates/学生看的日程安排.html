@@ -1,0 +1,135 @@
+﻿<html>
+
+  <body align="center" background="/site_media/02.gif"  >
+
+<form  action = "/yuyue/"  method="post">
+{% csrf_token %}
+   <a href="/logout/">退出登录</a>
+    <a href="/search/?id={{user.Username}}&classid=aa&a=bb">教师检索</a>
+     <a href="/recommend/?id={{user.Username}}&classid = aa">教师推荐</a>
+     <a href="/xsck/">查看预约</a>
+   <a href="/search/?id={{date.username}}&classid=4&a=1">查看其它日程</a>
+  <fieldset>
+    <legend>日程安排</legend>
+<table border="1">
+<tr>
+  <td>本学期第<input name ="weeknumber" type="text"  readonly="readonly"  value="{{date.weeknumber}}">周</td>
+  <td >周一</td>
+  <td >周二</td>
+  <td >周三</td>
+  <td >周四</td>
+  <td >周五</td>
+</tr>
+<tr>
+
+  <th background="02.gif">8:00-10:00</th>
+  <td><input type="text" name="weekonefirst" value="{{date.weekonefirst}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwofirst" value="{{date.weektwofirst}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreefirst" value="{{date.weekthreefirst}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfourfirst"  value="{{date.weekfourfirst}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.weekfivefirst}}" readonly="readonly" ></td>
+</tr>
+<tr>
+  <th background="02.gif">10:00-12:00</th>
+  <td><input type="text" name="weekonesecond" value="{{date.weekonesecond}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwosecond" value="{{date.weektwosecond}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreesecond" value="{{date.weekthreesecond}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfoursecond" value="{{date.weekfoursecond}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivesecond" value="{{date.weekfivesecond}}" readonly="readonly" ></td>
+
+</tr>
+<tr>
+  <th background="02.gif">14:00-16:00</th>
+  <td><input type="text" name="weekonethird" value="{{date.weekonethird}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwothird" value="{{date.weektwothird}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreethird" value="{{date.weekthreethird}}"  readonly="readonly" ></td>
+  <td><input type="text" name="weekfourthird" value="{{date.weekfourthird}}"  readonly="readonly" ></td>
+  <td><input type="text" name="weekfivethird" value="{{date.weekfivethird}}" readonly="readonly" ></td>
+
+</tr>
+<tr>
+  <th background="02.gif">16:00-18:00</th>
+  <td><input type="text" name="weekonefourth" value="{{date.weekonefourth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwofourth" value="{{date.weektwofourth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreefourth" value="{{date.weekthreefourth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfourfourth" value="{{date.weekfourfourth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefourth" value="{{date.weekfivefourth}}" readonly="readonly" ></td>
+
+</tr>
+<tr>
+  <th background="02.gif">19:00-21 :00</th>
+  <td><input type="text" name="weekonefifth" value="{{date.weekonefifth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwofifth" value="{{date.weektwofifth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreefifth" value="{{date.weekthreefifth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfourfifth" value="{{date.weekfourfifth}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefifth" value="{{date.weekfivefifth}}" readonly="readonly" ></td>
+
+</tr>
+</table>
+
+  </fieldset>
+  <fieldset>
+  <legend>预约教师</legend>
+
+<table border="1"  bgcolor="white">
+  <tr>
+  <th>用户名</th>
+  <td ><input type="text" name="student" value="{{user.Username}}" readonly="readonly" ></td>
+ </tr>
+ <tr>
+  <th>姓名</th>
+  <td ><input type="text" name="name" value="{{user.Name}}"></td>
+ </tr>
+   <tr>
+  <th>电话</th>
+  <td ><input type="text" name="phone"></td>
+ </tr>
+   <tr>
+  <th>导师姓名</th>
+  <td ><input type="text" name="daoshi" value="{{user1.Name}}" readonly="readonly" ></td>
+ </tr>
+ <tr>
+   <tr>
+  <th>周次</th>
+  <td> <input type="number" name="week" readonly="readonly"  value="{{date.weeknumber}}"></td>
+ </tr>
+ <th>星期</th>
+<td> 
+  
+  <select name="day" >
+  <option >一</option>
+   <option >二</option>
+   <option >三</option>
+   <option >四</option>
+  <option >五</option></td>
+
+   <tr>
+  <th>时间段</th>
+      <td><select name="time" >
+  <option >8:00-10:00</option>
+  <option >10:00-12:00</option>
+   <option >14:00-16:00</option>
+   <option >16:00-18:00</option>
+   <option >19:00-21:00</option>
+</td>
+ </tr>
+    
+   <tr>
+  <th>预约地点</th>
+  <td ><input type="text" name="where"  ></td>
+ </tr>
+   <tr>
+  <th>审核状态</th>
+  <td ><input type="text" name="s" value="未审核" readonly="readonly" ></td>
+ </tr>
+     <tr>
+ 
+  <td> <input type="submit" value="预约"></td>
+ </tr>
+</table>
+
+ </fieldset>
+</form>
+
+</body>
+</html>

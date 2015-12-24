@@ -1,0 +1,21 @@
+﻿<html>
+  <head>
+    <title>预约</title>
+</head>
+  <body align="center" background="/site_media/02.gif"  >
+    <p><h1>填写预约消息</h1></p>
+
+    <form method="post">
+    {% csrf_token %}
+    <table border=1 align="center" background="/site_media/3.gif"> 
+      <tr><td>用户名<input name="orderusername" value="{{user.Username}}" readonly="readonly" type="text"></td></tr>
+      <tr><td>预约导师<input name="daoshi" value="{{user1.Name}}" readonly="readonly" type="text"></td></tr>
+      <tr><td>姓名<input name="xingming" type="text"></td></tr>
+      <tr><td>预约日期<input name="orderdata" type="text"></td></tr>
+      <tr><td>联系方式<input name="telephone" type="text"></td></tr>
+      <tr><td><input type="submit" value="保存"> <input type="reset" value="重填"></td></tr>
+ </tr>
+</table>
+  </body>
+</html>
+

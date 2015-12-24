@@ -1,0 +1,97 @@
+﻿
+<html>   
+    <head>    
+        <title>搜索设备</title> 
+<script>
+    function check(f){
+        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;  
+
+        var regExp=/^\d+(\.\d+)?$/;
+        var elementTxt=f.week.value;
+        if(f.week.value != '' && !regExp.test (elementTxt))
+        {
+            alert("价格请输入数字!");  
+            return false;
+        }
+    }
+</script>  
+    </head>   
+    <body   background="/site_media/02.gif">
+
+
+
+    <a href="/teacher/">个人信息</a>
+   <a href="/teacher1/">科学研究</a>
+   <a href="/teacher2/">论文专著</a>
+   <a href="/cha/">修改行程</a>
+       <a href="/jiancha/">查看预约</a>
+   <a href="/changepassword/">修改密码</a>
+   <a href="/logout/">退出登录</a>
+
+<form method="post" action = "/teachertongyi/"  onsubmit="return check(this)">
+   {% csrf_token %}
+<table border=1 align="center" background="/media/Images/formback.jpg">
+ <tr>
+ 
+
+  <tr><td>周次<input name="week" type="text" value=></td></tr>
+  <tr><td>审核状态<select name="state" value=>
+  <option value="全部">全部</option>
+  <option value="未审核">未审核</option>
+  <option value="同意">同意</option>
+  <option value="拒绝">拒绝</option>
+  </td></tr>
+
+  <tr><td><input type="submit" name="search" value="搜索"> <input type="reset" value="重填"></td></tr>
+ </tr>
+</table>
+</form>
+<script language=javascript>
+function disselectAll(){
+var a = document.getElementsByTagName("input");
+for(var i = 0;i<a.length;i++){
+if(a[i].type == "checkbox") a[i].checked = false;
+}
+}
+
+function selectAll(){
+var a = document.getElementsByTagName("input");
+for(var i = 0;i<a.length;i++){
+if(a[i].type == "checkbox") a[i].checked = true;
+}
+}
+</script>
+
+<form method="post" action = "/teachertongyi/">
+{% csrf_token %}
+<table border=1 align="center" background="/media/Images/formback.jpg">
+ <tr>
+  <th>选择<input type="button" name="chk" onclick="selectAll()" value="全选"/>
+<input type="button" name="chk" onclick="disselectAll()" value="全不选"/></th>
+<th>学生姓名</th><th>预约导师</th><th>预约日期</th><th>预约地点</th><th>学生电话</th><th>审核状态</th>
+ </tr>
+
+ 
+ {% for order in orderlist %}
+  <tr>
+
+     <td><input type="checkbox" name="chk" value={{ order.count}}></td>
+
+   <td>{{ order.xingming}}</td>
+  <td>{{ order.daoshi }}</td>
+
+  <td>{{ order.week}}周星期{{ order.week}}时间{{ order.time}}</td>
+  <td>{{ order.where}}</td>
+  <td>{{ order.telephone}}</td>
+  <td>{{ order.shenghe}}</td>
+
+   <td><a href="/teachertyyx/?a={{order.orderusername}}&count={{order.count}}">同意</a>
+   <a href="/teacherjjyx/?a={{order.orderusername}}&count={{order.count}}">拒绝</a></td>
+ </tr>
+ {% endfor %}
+<tr><td><input type="submit" name="borrow" value="选中的同意"> <input type="submit" name="dumping" value="选中的拒绝"></td></tr>
+
+</table>
+</form>
+</body> 
+</html>

@@ -1,0 +1,62 @@
+﻿<html>
+<head>
+
+<style type="text/css">
+
+body {background-color: white}
+h1 {background-color: #00ff00}
+h2 {background-color: transparent}
+p {background-color: rgb(250,0,255)}
+
+p.no2 {background-color: gray; padding: 20px;}
+
+</style>
+
+</head>
+
+<body background="/site_media/02.gif">
+    <a href="/teacher/">个人信息</a>
+   <a href="/teacher1/">科学研究</a>
+   <a href="/teacher2/">论文专著</a>
+   <a href="/cha/">修改行程</a>
+       <a href="/jiancha/">查看预约</a>
+   <a href="/changepassword/">修改密码</a>
+   <a href="/logout/">退出登录</a>
+
+<h1>科学研究</h1>
+<hr />
+<form  method="post">
+{% csrf_token %}
+
+  <fieldset>
+    <legend>研究领域</legend>
+
+<textarea name ="yanjiufield" cols="185" rows="2">
+{{user.yanjiufield}}
+</textarea>
+  
+<br/>
+
+  </fieldset>
+  <fieldset>
+  <legend>奖项成果</legend>
+
+<textarea name ="Achievement" cols="185" rows="6">
+{{user.Achievement}}
+</textarea>
+  
+<br/>
+ </fieldset>
+  <fieldset>
+  <legend>科研项目</legend>
+
+<textarea name ="keyanfield" cols="185" rows="15">
+{{user.keyanfield}}
+</textarea>
+  
+<br/>
+ </fieldset>
+<input type="submit" value="修改"> <input type="reset" value="重填">
+</form>
+</body>
+</html>

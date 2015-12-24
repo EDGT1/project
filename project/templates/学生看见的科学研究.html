@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+
+<style type="text/css">
+
+body {background-color: white}
+h1 {background-color: #00ff00}
+h2 {background-color: transparent}
+p {background-color: rgb(250,0,255)}
+
+p.no2 {background-color: gray; padding: 20px;}
+
+</style>
+
+</head>
+
+  <body align="center" background="/site_media/02.gif"  >
+    <a href="/search/?id={{user.Username}}&classid=1&a=bb ">{{user.Name}}</a>
+   <a href="/search/?id={{user.Username}}&classid=2&a=bb ">{{user.Name}}科学研究</a>
+   <a href="/search/?id={{user.Username}}&classid=3&a=bb ">{{user.Name}}论文专著</a>
+    <a href="/search/?id={{user.Username}}&classid=4&a=bb ">{{user.Name}}行程</a>
+
+<h1>科学研究</h1>
+<hr />
+<form  method="post">
+{% csrf_token %}
+
+  <fieldset>
+    <legend>研究领域</legend>
+
+<textarea name ="yanjiufield" cols="185" rows="2"  readonly="readonly" >
+{{user.yanjiufield}}
+</textarea>
+  
+<br/>
+
+  </fieldset>
+  <fieldset>
+  <legend>奖项成果</legend>
+
+<textarea name ="Achievement" cols="185" rows="6"  readonly="readonly" >
+{{user.Achievement}}
+</textarea>
+  
+<br/>
+ </fieldset>
+  <fieldset>
+  <legend>科研项目</legend>
+
+<textarea name ="keyanfield" cols="185" rows="15"  readonly="readonly" >
+{{user.keyanfield}}
+</textarea>
+  
+<br/>
+ </fieldset>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="/site_media/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+    <a href="/teacher/">个人信息</a>
+   <a href="/teacher1/">科学研究</a>
+   <a href="/teacher2/">论文专著</a>
+   <a href="/cha/">修改行程</a>
+       <a href="/jiancha/">查看预约</a>
+   <a href="/changepassword/">修改密码</a>
+   <a href="/logout/">退出登录</a>
+  <section class="container">
+    <div class="login">
+      <h1>修改日程</h1>
+      <form action = "/cha1/" method="post" >
+        {% csrf_token %}
+         
+        <p>本学习第几周次<input type="text" name="weeknumber" value="" placeholder="周次"></p>
+        <p class="submit"><input type="submit" name="commit" value="查询"></p>
+      </form>
+    </div>
+
+
+  </section>
+<div style="text-align:center;">
+
+</div>
+</body>
+</html>

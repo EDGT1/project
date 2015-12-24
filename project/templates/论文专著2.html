@@ -1,0 +1,73 @@
+﻿<html>
+<head>
+
+<style type="text/css">
+
+body {background-color: white}
+h1 {background-color: #00ff00}
+h2 {background-color: transparent}
+p {background-color: rgb(250,0,255)}
+
+p.no2 {background-color: gray; padding: 20px;}
+
+</style>
+
+</head>
+
+<body background="/site_media/02.gif">
+    <a href="/teacher/">个人信息</a>
+   <a href="/teacher1/">科学研究</a>
+   <a href="/teacher2/">论文专著</a>
+   <a href="/cha/">修改行程</a>
+       <a href="/jiancha/">查看预约</a>
+   <a href="/changepassword/">修改密码</a>
+   <a href="/logout/">退出登录</a>
+
+<h1>论文专著</h1>
+<hr />
+<form  method="post">
+
+{% csrf_token %}
+  <fieldset>
+    <legend>软件著作权登记和发明专利</legend>
+
+<textarea name ="patent"  cols="185" rows="20">
+{{user.patent}}
+</textarea>
+  <input type="submit" value="修改">
+<br/>
+
+  </fieldset>
+  <fieldset>
+  <legend>论著成果</legend>
+
+<table border="1"  bgcolor="white">
+<tr>
+
+  <th >出版物</th>
+  <th >作者</th>
+  <th >出版日期</th>
+  <th >出版社</th>
+</tr>
+<tr>
+  <td><textarea name ="shu" cols="50" rows="2"></textarea></td>
+  <td><textarea name ="author" cols="50" rows="2"></textarea></td>
+  <td><textarea name ="bookdate" cols="10" rows="2"></textarea></td>
+  <td><textarea name ="publisher" cols="50" rows="2"></textarea></td>
+  <input type="submit" value="添加">
+</tr>
+{% for book in book_list %}
+ <tr>
+  <td>{{ book.shu }}</td>
+  <td>{{ book.author }}</td>
+   <td>{{ book.bookdate }}</td>
+   <td>{{ book.publisher }}</td>
+ </tr>
+{% endfor %}
+</table>
+
+ </fieldset>
+
+</form>
+</body>
+</html>

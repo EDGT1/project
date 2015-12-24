@@ -1,0 +1,19 @@
+<html>
+<title>教师检索信息</title>
+<body align="center" background="/site_media/02.gif"  ><a href="http://127.0.0.1:8000/search/">退出登录</a></body>
+<tr><td>教师检索信息</td></tr>
+<table border=1 align="center" background="/site_media/3.gif">
+ <tr>
+  <th>姓名</th><th>电子邮箱</th><th>联系方式</th><th>实验室</th><th>办公地点</th><th>个人成就</th><th>行程</th>
+ </tr>
+
+ <tr>
+  <td>{{ user_list.Name }}</td>
+  <td>{{ user_list.Email }}</a>
+  <td>{{ user_list.Phone }}</td>
+  <td>{{ user_list.Labroom }}</td>
+  <td>{{ user_list.Workroom}}</td>
+  <td>{{ user_list.Achievement }}</td>
+  <td>{{ user_list.Date }}</td>
+ </tr>
+</html>

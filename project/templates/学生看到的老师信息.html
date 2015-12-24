@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+
+<style type="text/css">
+
+body {background-color: white}
+h4 {background-color: #00ff00}
+h2 {background-color: transparent}
+p {background-color: rgb(250,0,255)}
+
+p.no2 {background-color: gray; padding: 20px;}
+
+</style>
+
+</head>
+
+  <body align="center" background="/site_media/02.gif"  >
+    <a href="/search/?id={{user.Username}}&classid=1&a=bb ">{{user.Name}}</a>
+   <a href="/search/?id={{user.Username}}&classid=2&a=bb ">{{user.Name}}科学研究</a>
+   <a href="/search/?id={{user.Username}}&classid=3&a=bb ">{{user.Name}}论文专著</a>
+    <a href="/search/?id={{user.Username}}&classid=4&a=bb ">{{user.Name}}行程</a>
+<h4>基本信息</h4>
+<hr />
+<form  method="post">
+
+   {% csrf_token %}
+  <fieldset>
+    <legend>基本信息</legend>
+    本人姓名：
+<input type="text" name="name" value="{{user.Name}}" readonly="readonly" >
+<br />
+
+
+学院院系：
+<input type="text" name="college" value="{{user.college}}" readonly="readonly" >
+<br />
+从事领域：
+<input type="text" name="study" value="{{user.Study}}" readonly="readonly" >
+<br />
+联系方式：
+<input type="text" name="phone" value="{{user.Phone}}" readonly="readonly" >
+<br />
+
+电子邮箱：
+<input type="text" name="email" value="{{user.Email}}" readonly="readonly" >
+<br />
+办公地点：
+<input type="text" name="workroom" value="{{user.Workroom}}" readonly="readonly" >
+<br />
+
+
+  </fieldset>
+<h4>教育经历</h4>
+<hr />
+
+
+
+  <fieldset>
+    <legend>教育经历</legend>
+
+<textarea  name="teach"  type="text"  cols="185" rows="10"  readonly="readonly" >
+{{user.teachlive}}
+</textarea>
+<br />
+
+  </fieldset>
+<h4>工作经历</h4>
+<hr />
+
+
+
+  <fieldset>
+    <legend>工作经历</legend>
+    <table border="1"  bgcolor="white">
+<tr>
+  <th>时间</th>
+  <th >工作经历</th>
+</tr>
+
+{% for work in work_list %}
+ <tr>
+   <td><textarea  cols="20" rows="1" readonly="readonly">{{ work.time }}</textarea></td>
+   <td><textarea  cols="130" rows="1" readonly="readonly">{{ work.worktravel }}</textarea></td>
+
+ </tr>
+{% endfor %}
+  </fieldset>
+</form>
+</body>
+</html>

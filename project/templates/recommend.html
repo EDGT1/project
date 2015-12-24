@@ -1,0 +1,25 @@
+﻿<html>
+<body align="center" background="/site_media/02.gif"  >
+</body>
+<title>选择你感兴趣的领域</title>
+<a href="http://127.0.0.1:8000/">退出登录</a>
+<form method="post"><table align="center">
+{% csrf_token %}
+ 
+  <tr><td>选择你感兴趣的领域<select name="search" >
+    {% for t in t_list %}
+  <option >{{t.Study}}</option>
+
+    {% endfor %}
+ 
+  </td></tr>
+    <tr><td>选择你感兴趣的院系<select name="yuanxi" >
+    {% for t in t_list %}
+  <option >{{t.college}}</option>
+
+    {% endfor %}
+
+  </td></tr>
+   <tr><td><input type="submit" value="推荐">  </td></tr>
+</form>
+</html>

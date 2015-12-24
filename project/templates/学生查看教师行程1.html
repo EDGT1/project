@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="/site_media/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+    <a href="/logout/">退出登录</a>
+    <a href="/search/?id={{a.Username}}&classid=aa&a=bb">教师检索</a>
+     <a href="/recommend/?id={{a.Username}}&classid = aa">教师推荐</a>
+     <a href="/xsck/">查看预约</a>
+  <section class="container">
+    <div class="login">
+      <h1>不存在该日程重新输入</h1>
+      <form  method="post" >
+        {% csrf_token %}
+         
+        <p>本学期第几周次<input type="text" name="weeknumber" value="" placeholder="周次"></p>
+        <p class="submit"><input type="submit" name="search" value="查询"></p>
+      </form>
+    </div>
+
+
+  </section>
+<div style="text-align:center;">
+
+</div>
+</body>
+</html>

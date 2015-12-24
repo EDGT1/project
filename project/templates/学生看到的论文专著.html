@@ -1,0 +1,65 @@
+﻿<html>
+<head>
+
+<style type="text/css">
+
+body {background-color: white}
+h1 {background-color: #00ff00}
+h2 {background-color: transparent}
+p {background-color: rgb(250,0,255)}
+
+p.no2 {background-color: gray; padding: 20px;}
+
+</style>
+
+</head>
+
+  <body align="center" background="/site_media/02.gif"  >
+    <a href="/search/?id={{user.Username}}&classid=1&a=bb ">{{user.Name}}</a>
+   <a href="/search/?id={{user.Username}}&classid=2&a=bb ">{{user.Name}}科学研究</a>
+   <a href="/search/?id={{user.Username}}&classid=3&a=bb ">{{user.Name}}论文专著</a>
+    <a href="/search/?id={{user.Username}}&classid=4&a=bb ">{{user.Name}}行程</a>
+
+<h1>论文专著</h1>
+<hr />
+<form  method="post">
+
+{% csrf_token %}
+  <fieldset>
+    <legend>软件著作权登记和发明专利</legend>
+
+<textarea name ="patent"  cols="185" rows="20"  readonly="readonly">
+{{user.patent}}
+</textarea>
+ 
+<br/>
+
+  </fieldset>
+  <fieldset>
+  <legend>论著成果</legend>
+
+<table border="1"  bgcolor="white">
+<tr>
+
+  <th >出版物</th>
+  <th >作者</th>
+  <th >出版日期</th>
+  <th >出版社</th>
+</tr>
+{% for book in book_list %}
+<tr>
+  <td><textarea name ="shu" cols="50" rows="2" readonly="readonly">{{ book.shu }}</textarea></td>
+  <td><textarea name ="author" cols="50" rows="2" readonly="readonly">{{ book.author }}</textarea></td>
+  <td><textarea name ="bookdate" cols="10" rows="2" readonly="readonly">{{ book.bookdate }}</textarea></td>
+  <td><textarea name ="publisher" cols="50" rows="2" readonly="readonly">{{ book.publisher }}</textarea></td>
+
+</tr>
+{% endfor %}
+
+</table>
+
+ </fieldset>
+
+</form>
+</body>
+</html>

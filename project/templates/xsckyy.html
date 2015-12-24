@@ -1,0 +1,92 @@
+﻿
+<html>   
+    <head>    
+        <title>搜索设备</title> 
+<script>
+    function check(f){
+        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;  
+
+        var regExp=/^\d+(\.\d+)?$/;
+        var elementTxt=f.price.value;
+        if(f.price.value != '' && !regExp.test (elementTxt))
+        {
+            alert("价格请输入数字!");  
+            return false;
+        }
+    }
+</script>  
+    </head>   
+    <body align="center" background="/site_media/02.gif"">
+    <p align="center">
+<p align="center"><font size="6" face="楷体" color="blue">欢迎你</font></p>
+    <p align="center"> <a href="http://127.0.0.1:8000/">返回</a></p>
+    <a href="/search/?id={{user.Username}}&classid=aa&a=bb">教师检索</a>
+     <a href="/recommend/?id={{user.Username}}&classid = aa">教师推荐</a>
+
+
+<form method="post" action = "/xsck/"  onsubmit="return check(this)">
+   {% csrf_token %}
+<table border=1 align="center" background="/media/Images/formback.jpg">
+ <tr>
+ 
+
+
+  <tr><td>审核状态<select name="state" value=>
+  <option value="全部">全部</option>
+  <option value="未审核">未审核</option>
+  <option value="同意">同意</option>
+  <option value="拒绝">拒绝</option>
+  </td></tr>
+
+  <tr><td><input type="submit" name="search" value="搜索"> <input type="reset" value="重填"></td></tr>
+ </tr>
+</table>
+</form>
+<script language=javascript>
+function disselectAll(){
+var a = document.getElementsByTagName("input");
+for(var i = 0;i<a.length;i++){
+if(a[i].type == "checkbox") a[i].checked = false;
+}
+}
+
+function selectAll(){
+var a = document.getElementsByTagName("input");
+for(var i = 0;i<a.length;i++){
+if(a[i].type == "checkbox") a[i].checked = true;
+}
+}
+</script>
+
+<form action = "/xsck/"  method="post">
+   {% csrf_token %}
+<table border=1 align="center" background="/media/Images/formback.jpg">
+ <tr>
+  <th>选择<input type="button" name="chk" onclick="selectAll()" value="全选"/>
+<input type="button" name="chk" onclick="disselectAll()" value="全不选"/></th>
+<th>学生用户名</th><th>学生姓名</th><th>预约导师</th><th>预约日期</th><th>预约地点</th><th>学生电话</th><th>审核状态</th>
+ </tr>
+
+ 
+ {% for order in orderlist %}
+  <tr>
+     <td><input type="checkbox" name="chk" value={{order.count}}></td>
+   <td>{{ order.orderusername}}</td>
+   <td>{{ order.xingming}}</td>
+  <td>{{ order.daoshi }}</td>
+
+  <td>{{ order.week}}周星期{{ order.week}}时间{{ order.time}}</td>
+  <td>{{ order.where}}</td>
+  <td>{{ order.telephone}}</td>
+  <td>{{ order.shenghe}}</td>
+  <td>{{order.count}}</td>
+   <td><a href="/xsck/?a={{order.orderusername}}&count={{order.count}}">删除</a>
+</td>
+ </tr>
+ {% endfor %}
+<tr><td><input type="submit" name="delete" value="选中的删除"> </td></tr>
+
+</table>
+</form>
+</body> 
+</html>

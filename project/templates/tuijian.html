@@ -1,0 +1,16 @@
+﻿<html>
+<title>教师检索信息</title>
+<body align="center" background="/site_media/02.gif"  ><a href="/logout/">退出登录</a></body>
+<tr><td>教师检索信息</td></tr>
+<table border=1 align="center" background="/site_media/3.gif">
+ <tr>
+  <th>点击查看</th>
+ </tr>
+{% for user in user_list %}
+ <tr>
+
+  <td><a href="/studentcktj/?a={{user.Name}}">{{ user.Name }}</a></td>
+
+ </tr>
+{% endfor %}
+</html>

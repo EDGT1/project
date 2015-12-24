@@ -1,0 +1,71 @@
+﻿<html>
+
+<body  background="/site_media/02.gif">
+
+<form  action = "/teacher3/"  method="post">
+{% csrf_token %}
+   <a href="/cha/">查看其它日程</a>
+  <fieldset>
+    <legend>日程安排</legend>
+<table border="1">
+<tr>
+  <td>本学期第<input name ="weeknumber" type="text"  readonly="readonly"  value="{{date.weeknumber}}">周</td>
+  <td >周一</td>
+  <td >周二</td>
+  <td >周三</td>
+  <td >周四</td>
+  <td >周五</td>
+</tr>
+<tr>
+
+  <th background="02.gif">8:00-10:00</th>
+  <td><input type="text" name="weekonefirst" value="{{date.weekonefirst}}"></td>
+  <td><input type="text" name="weektwofirst" value="{{date.weektwofirst}}" ></td>
+  <td><input type="text" name="weekthreefirst" value="{{date.weekthreefirst}}" ></td>
+  <td><input type="text" name="weekfourfirst"  value="{{date.weekfourfirst}}"></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.weekfivefirst}}"></td>
+</tr>
+<tr>
+  <th background="02.gif">10:00-12:00</th>
+  <td><input type="text" name="weekonesecond" value="{{date.weekonesecond}}"></td>
+  <td><input type="text" name="weektwosecond" value="{{date.weektwosecond}}"></td>
+  <td><input type="text" name="weekthreesecond" value="{{date.weekthreesecond}}"></td>
+  <td><input type="text" name="weekfoursecond" value="{{date.weekfoursecond}}"></td>
+  <td><input type="text" name="weekfivesecond" value="{{date.weekfivesecond}}"></td>
+
+</tr>
+<tr>
+  <th background="02.gif">14:00-16:00</th>
+  <td><input type="text" name="weekonethird" value="{{date.weekonethird}}"></td>
+  <td><input type="text" name="weektwothird" value="{{date.weektwothird}}"></td>
+  <td><input type="text" name="weekthreethird" value="{{date.weekthreethird}}"></td>
+  <td><input type="text" name="weekfourthird" value="{{date.weekfourthird}}"></td>
+  <td><input type="text" name="weekfivethird" value="{{date.weekfivethird}}"></td>
+
+</tr>
+<tr>
+  <th background="02.gif">16:00-18:00</th>
+  <td><input type="text" name="weekonefourth" value="{{date.weekonefourth}}"></td>
+  <td><input type="text" name="weektwofourth" value="{{date.weektwofourth}}"></td>
+  <td><input type="text" name="weekthreefourth" value="{{date.weekthreefourth}}"></td>
+  <td><input type="text" name="weekfourfourth" value="{{date.weekfourfourth}}"></td>
+  <td><input type="text" name="weekfivefourth" value="{{date.weekfivefourth}}"></td>
+
+</tr>
+<tr>
+  <th background="02.gif">19:00-21 :00</th>
+  <td><input type="text" name="weekonefifth" value="{{date.weekonefifth}}"></td>
+  <td><input type="text" name="weektwofifth" value="{{date.weektwofifth}}"></td>
+  <td><input type="text" name="weekthreefifth" value="{{date.weekthreefifth}}"></td>
+  <td><input type="text" name="weekfourfifth" value="{{date.weekfourfifth}}"></td>
+  <td><input type="text" name="weekfivefifth" value="{{date.weekfivefifth}}"></td>
+
+</tr>
+</table>
+<input type="submit" value="修改"> <input type="reset" value="重填">
+  </fieldset>
+
+</form>
+
+</body>
+</html>
