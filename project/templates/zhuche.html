@@ -1,28 +1,34 @@
 ﻿<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Login Form</title>
   <link rel="stylesheet" href="/site_media/css/style.css">
-  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
 </head>
 <body>
-
+<script> 
+function check_name(str)
+			{
+				if(str==null || str=='')
+				{
+					alert("不可为空！");
+				}
+			}
+ </script>
   <section class="container">
     <div class="login">
       <h1>用户注册</h1>
       <form method="post" >
         {% csrf_token %}
-        <p><input type="text" name="Username" value="" placeholder="用户名"></p>
-        <p><input type="password" name="Password" value="" placeholder="密码"></p>
-        <p><input type="password" name="againpassword" value="" placeholder="确认密码"></p>
-        <p><input type="text" name="name" value="" placeholder="真实姓名"></p>
-        <p><input type="text" name="question" value="" placeholder="找回密码的问题"></p>
-        <p><input type="text" name="answer" value="" placeholder="找回密码的答案"></p>
+        <p><input type="text" name="Username" value="" placeholder="用户名" onblur="check_name(this.value);"/></p>
+        <p><input type="password"   name="Password" value="" placeholder="密码" onblur="check_name(this.value);"></p>
+        <p><input type="password"   name="againpassword" value="" placeholder="确认密码" onblur="check_name(this.value);"></p>
+        <p><input type="text" name="name"  value="" placeholder="真实姓名" onblur="check_name(this.value);"></p>
+        <p><input type="text" name="phone" value="" placeholder="联系电话" onblur="check_name(this.value);"></p>
+        <p><input type="text" name="question" value="" placeholder="找回密码的问题" onblur="check_name(this.value);"></p>
+        <p><input type="text" name="answer" value="" placeholder="找回密码的答案" onblur="check_name(this.value);"></p>
         <p><select name="L" >
         <option >student</option>
         <option >teacher</option></p>

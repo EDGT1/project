@@ -19,7 +19,7 @@ function check_name(str)
  </script>
   <section class="container">
     <div class="login">
-      <h1>用户名已经存在！！！</h1>
+      <h1>信息未填全！！</h1>
       <form method="post" >
         {% csrf_token %}
         <p><input type="text" name="Username" value="" placeholder="用户名" onblur="check_name(this.value);"/></p>

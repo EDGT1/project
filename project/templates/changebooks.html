@@ -20,7 +20,7 @@
 
 </head>
          
-  <body align="center"  >
+  <body   >
 
 <div id="wrap">
 
@@ -46,7 +46,7 @@
 	<li class=""><a href="/changepassword/">修改密码</a></li>
 	<li class=""><a href="/cha/">修改行程</a></li>
   </ul>
-  <p class="navbar-text pull-right"> {{user.Name}}您好！
+  <p class="navbar-text pull-right"> {{book.username}}您好！
  <a href="/logout/" class="navbar-link">退出登录</a></p>
   <ul class="nav navbar-nav navbar-right">
     <li><a href="http://mentor.sinaapp.com/student/info#"></a></li>
@@ -54,7 +54,66 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 
-  <p><h1>暂无预约信息</h1></p>
+<body   >
+ <div class="container">
 
-  </body>
-</html>
+<div class="row">
+
+  <div class="">
+    <h2>修改成功<small>&nbsp;</small></h2>
+    <hr>
+  </div>
+
+  <form class="form-horizontal" role="form" method="post" action="">
+          {% csrf_token %}
+
+
+
+    <div class="form-group">
+      <label for="inputEmail9" class="col-sm-2 control-label">书籍名称</label>
+      <div class="col-sm-10">
+        <input type="tel" name="shu" class="form-control" id="inputEmail9" placeholder="" value="{{book.shu}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">作者</label>
+      <div class="col-sm-10">
+        <input value="{{book.author}}" type="tel" name="author" class="form-control" id="inputEmail3" placeholder="">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputEmail4" class="col-sm-2 control-label">出版日期</label>
+      <div class="col-sm-10">
+        <input value="{{book.bookdate}}" type="tel" name="bookdate" class="form-control" id="inputEmail4" placeholder="">
+      </div>
+    </div>
+	<div class="form-group">
+      <label for="inputEmail4" class="col-sm-2 control-label">出版社</label>
+      <div class="col-sm-10">
+        <input value="{{book.publisher}}" type="tel" name="publisher" class="form-control" id="inputEmail4" placeholder="">
+      </div>
+    </div>
+
+ 
+    <hr>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+
+        <button type="submit" class="btn btn-primary">提交修改</button>
+      </div>
+      </div>
+    </form></div>
+  
+
+</div>
+
+</div>
+
+
+
+
+
+</body></html>

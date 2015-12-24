@@ -95,6 +95,8 @@ p.no2 {background-color: gray; padding: 20px;}
  <tr>
   <td>{{ work.time }}</td>
   <td>{{ work.worktravel }}</td>
+  <td><a href="/workchange/?index={{work.count}}">修改</a>
+   <a href="/workdelete/?index={{work.count}}">删除</a></td>
  </tr>
 {% endfor %}
   </fieldset>

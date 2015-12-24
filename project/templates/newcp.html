@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://mentor.sinaapp.com/student/info -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>本科生预约导师系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Le styles -->
+  <link href="http://cs-mentor.qiniudn.com/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/todc-bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/sticky-footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  </style>
+     
+
+
+  <script type="text/javascript" async="" src="./media/50614"></script><script src="./media/jquery.min.js"></script>
+  <script src="./media/bootstrap.min.js"></script>
+
+</head>
+         
+<body   >
+
+<div id="wrap">
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+        <a class="navbar-brand" href="/teacher/"><strong>本科生预约导师系统</strong></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav">
+         <li class=""><a href="/teacher/">个人信息</a></li>
+    <li class=""><a href="/teacher1/">科学研究</a></li>
+	 <li class=""> <a href="/teacher2/">论文专著</a></li>
+
+    <li class=""><a href="/jiancha/">查看预约</a></li>
+	<li class=""><a href="/changepassword/">修改密码</a></li>
+	<li class=""><a href="/cha/">修改行程</a></li>
+  </ul>
+  <p class="navbar-text pull-right"> {{user.Name}}您好！
+ <a href="/logout/" class="navbar-link">退出登录</a></p>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://mentor.sinaapp.com/student/info#"></a></li>
+  </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+
+
+
+
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript">
+  $(function(){
+
+  })
+</script>
+
+<div class="container">
+
+<div class="row">
+
+  <div class="">
+    <h2>注册信息编辑<small>&nbsp;</small></h2>
+    <hr>
+  </div>
+
+  <form class="form-horizontal" role="form" method="post" action="">
+          {% csrf_token %}
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{user.Name}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{user.Username}}</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail9" class="col-sm-2 control-label">新密码</label>
+      <div class="col-sm-10">
+        <input type="password" name="Password" class="form-control" id="inputEmail9" placeholder="新密码" value="{{user.Password}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">确认密码</label>
+      <div class="col-sm-10">
+        <input value="{{user.Password}}" type="password" name="againpassword" class="form-control" id="inputEmail3" placeholder="确认密码">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputEmail4" class="col-sm-2 control-label">联系电话</label>
+      <div class="col-sm-10">
+        <input value="{{user.Phone}}" type="tel" name="phone" class="form-control" id="inputEmail4" placeholder="联系电话">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail6" class="col-sm-2 control-label">找回密码的问题</label>
+      <div class="col-sm-10">
+        <textarea row="10"  value="{{user.question}}" name="question" class="form-control" id="inputEmail6" placeholder="找回密码的问题">{{user.question}}</textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail10" class="col-sm-2 control-label">找回问题的答案</label>
+      <div class="col-sm-10">
+        <textarea row="20"   value="{{user.answer}}" name="answer" type = "text"  class="form-control" id="inputEmail10" placeholder="找回密码的答案">{{user.answer}}</textarea>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+
+        <button type="submit" class="btn btn-primary">提交修改</button>
+      </div>
+      </div>
+    </form></div>
+  
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+(function() {
+    var c = document.createElement('script'); 
+    c.type = 'text/javascript';
+    c.async = true;
+    c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/50614';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+
+
+</body></html>

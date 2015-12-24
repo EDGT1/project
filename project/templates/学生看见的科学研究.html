@@ -1,24 +1,70 @@
-﻿<html>
-<head>
+﻿<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>本科生预约导师系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Le styles -->
+  <link href="http://cs-mentor.qiniudn.com/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/todc-bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/sticky-footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  </style>
+     
+
+
+  <script type="text/javascript" async="" src="./media/50614"></script><script src="./media/jquery.min.js"></script>
+  <script src="./media/bootstrap.min.js"></script>
+
+</head>
+         
+<body>
+
+<div id="wrap">
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+        <a class="navbar-brand" href="/studentchangepassword/"><strong>本科生预约导师系统</strong></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav">
+                 <li class=""> <a href="/search/?id={{user.Username}}&classid=1&a=bb ">{{user.Name}}基本信息</a></li>
+    <li class=""><a href="/search/?id={{user.Username}}&classid=2&a=bb ">{{user.Name}}科学研究</a></li>
+	 <li class=""> <a href="/search/?id={{user.Username}}&classid=3&a=bb ">{{user.Name}}论文专著</a></li>
+
+    <li class=""> <a href="/search/?id={{user.Username}}&classid=4&a=bb ">{{user.Name}}行程</a></li>
+
+
+  </ul>
+  <p class="navbar-text pull-right"> {{loginuser.Name}}您好！
+ <a href="/logout/" class="navbar-link">退出登录</a></p>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://mentor.sinaapp.com/student/info#"></a></li>
+  </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
 
 <style type="text/css">
 
-body {background-color: white}
-h1 {background-color: #00ff00}
-h2 {background-color: transparent}
-p {background-color: rgb(250,0,255)}
 
-p.no2 {background-color: gray; padding: 20px;}
 
 </style>
 
 </head>
 
-  <body align="center" background="/site_media/02.gif"  >
-    <a href="/search/?id={{user.Username}}&classid=1&a=bb ">{{user.Name}}</a>
-   <a href="/search/?id={{user.Username}}&classid=2&a=bb ">{{user.Name}}科学研究</a>
-   <a href="/search/?id={{user.Username}}&classid=3&a=bb ">{{user.Name}}论文专著</a>
-    <a href="/search/?id={{user.Username}}&classid=4&a=bb ">{{user.Name}}行程</a>
+  <body align="center"   >
+
 
 <h1>科学研究</h1>
 <hr />

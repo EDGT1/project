@@ -1,14 +1,63 @@
-﻿<html>
+﻿<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>本科生预约导师系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Le styles -->
+  <link href="http://cs-mentor.qiniudn.com/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/todc-bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/sticky-footer.css" rel="stylesheet">
+  <style type="text/css">
 
-  <body align="center" background="/site_media/02.gif"  >
+  </style>
+     
+
+
+  <script type="text/javascript" async="" src="./media/50614"></script><script src="./media/jquery.min.js"></script>
+  <script src="./media/bootstrap.min.js"></script>
+
+</head>
+         
+<body  align="center" >
+
+<div id="wrap">
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+        <a class="navbar-brand" href="/studentchangepassword/"><strong>本科生预约导师系统</strong></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav">
+         <li class=""> <a href="/search/?id={{user1.Username}}&classid=1&a=bb ">{{user1.Name}}基本信息</a></li>
+    <li class=""><a href="/search/?id={{user1.Username}}&classid=2&a=bb ">{{user1.Name}}科学研究</a></li>
+	 <li class=""> <a href="/search/?id={{user1.Username}}&classid=3&a=bb ">{{user1.Name}}论文专著</a></li>
+
+    <li class=""> <a href="/search/?id={{user1.Username}}&classid=4&a=bb ">{{user1.Name}}行程</a></li>
+
+  </ul>
+  <p class="navbar-text pull-right"> {{user.Name}}您好！
+ <a href="/logout/" class="navbar-link">退出登录</a></p>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://mentor.sinaapp.com/student/info#"></a></li>
+  </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+  <body align="center"   >
 
 <form  action = "/yuyue/"  method="post">
 {% csrf_token %}
-   <a href="/logout/">退出登录</a>
-    <a href="/search/?id={{user.Username}}&classid=aa&a=bb">教师检索</a>
-     <a href="/recommend/?id={{user.Username}}&classid = aa">教师推荐</a>
-     <a href="/xsck/">查看预约</a>
-   <a href="/search/?id={{date.username}}&classid=4&a=1">查看其它日程</a>
+
   <fieldset>
     <legend>日程安排</legend>
 <table border="1">
@@ -19,51 +68,59 @@
   <td >周三</td>
   <td >周四</td>
   <td >周五</td>
+  <td >周六</td>
+  <td >周日</td>
 </tr>
 <tr>
 
   <th background="02.gif">8:00-10:00</th>
-  <td><input type="text" name="weekonefirst" value="{{date.weekonefirst}}" readonly="readonly" ></td>
-  <td><input type="text" name="weektwofirst" value="{{date.weektwofirst}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekthreefirst" value="{{date.weekthreefirst}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfourfirst"  value="{{date.weekfourfirst}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfivefirst" value="{{date.weekfivefirst}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekonefirst" value="{{date.week11}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwofirst" value="{{date.week21}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreefirst" value="{{date.week31}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfourfirst"  value="{{date.week41}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week51}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week61}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week71}}" readonly="readonly" ></td>
 </tr>
 <tr>
   <th background="02.gif">10:00-12:00</th>
-  <td><input type="text" name="weekonesecond" value="{{date.weekonesecond}}" readonly="readonly" ></td>
-  <td><input type="text" name="weektwosecond" value="{{date.weektwosecond}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekthreesecond" value="{{date.weekthreesecond}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfoursecond" value="{{date.weekfoursecond}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfivesecond" value="{{date.weekfivesecond}}" readonly="readonly" ></td>
-
+  <td><input type="text" name="weekonesecond" value="{{date.week12}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwosecond" value="{{date.week22}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreesecond" value="{{date.week32}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfoursecond" value="{{date.week42}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivesecond" value="{{date.week52}}" readonly="readonly" ></td>
+   <td><input type="text" name="weekfivefirst" value="{{date.week62}}" readonly="readonly" ></td>
+   <td><input type="text" name="weekfivefirst" value="{{date.week72}}" readonly="readonly" ></td>
 </tr>
 <tr>
   <th background="02.gif">14:00-16:00</th>
-  <td><input type="text" name="weekonethird" value="{{date.weekonethird}}" readonly="readonly" ></td>
-  <td><input type="text" name="weektwothird" value="{{date.weektwothird}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekthreethird" value="{{date.weekthreethird}}"  readonly="readonly" ></td>
-  <td><input type="text" name="weekfourthird" value="{{date.weekfourthird}}"  readonly="readonly" ></td>
-  <td><input type="text" name="weekfivethird" value="{{date.weekfivethird}}" readonly="readonly" ></td>
-
+  <td><input type="text" name="weekonethird" value="{{date.week13}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwothird" value="{{date.week23}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreethird" value="{{date.week33}}"  readonly="readonly" ></td>
+  <td><input type="text" name="weekfourthird" value="{{date.week43}}"  readonly="readonly" ></td>
+  <td><input type="text" name="weekfivethird" value="{{date.week53}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week63}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week73}}" readonly="readonly" ></td>
 </tr>
 <tr>
   <th background="02.gif">16:00-18:00</th>
-  <td><input type="text" name="weekonefourth" value="{{date.weekonefourth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weektwofourth" value="{{date.weektwofourth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekthreefourth" value="{{date.weekthreefourth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfourfourth" value="{{date.weekfourfourth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfivefourth" value="{{date.weekfivefourth}}" readonly="readonly" ></td>
-
+  <td><input type="text" name="weekonefourth" value="{{date.week14}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwofourth" value="{{date.week24}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreefourth" value="{{date.week34}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfourfourth" value="{{date.week44}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefourth" value="{{date.week54}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week64}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week74}}" readonly="readonly" ></td>
 </tr>
 <tr>
   <th background="02.gif">19:00-21 :00</th>
-  <td><input type="text" name="weekonefifth" value="{{date.weekonefifth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weektwofifth" value="{{date.weektwofifth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekthreefifth" value="{{date.weekthreefifth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfourfifth" value="{{date.weekfourfifth}}" readonly="readonly" ></td>
-  <td><input type="text" name="weekfivefifth" value="{{date.weekfivefifth}}" readonly="readonly" ></td>
-
+  <td><input type="text" name="weekonefifth" value="{{date.week15}}" readonly="readonly" ></td>
+  <td><input type="text" name="weektwofifth" value="{{date.week25}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekthreefifth" value="{{date.week35}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfourfifth" value="{{date.week45}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefifth" value="{{date.week55}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week65}}" readonly="readonly" ></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.week75}}" readonly="readonly" ></td>
 </tr>
 </table>
 
@@ -82,7 +139,7 @@
  </tr>
    <tr>
   <th>电话</th>
-  <td ><input type="text" name="phone"></td>
+  <td ><input type="text" name="phone" value="{{user.Phone}}"></td>
  </tr>
    <tr>
   <th>导师姓名</th>
@@ -101,7 +158,9 @@
    <option >二</option>
    <option >三</option>
    <option >四</option>
-  <option >五</option></td>
+  <option >五</option>
+  <option >六</option>
+   <option >日</option></td>
 
    <tr>
   <th>时间段</th>
@@ -116,15 +175,17 @@
     
    <tr>
   <th>预约地点</th>
-  <td ><input type="text" name="where"  ></td>
+  <td ><input type="text" name="where" value="{{user1.Workroom}}" ></td>
  </tr>
-   <tr>
-  <th>审核状态</th>
-  <td ><input type="text" name="s" value="未审核" readonly="readonly" ></td>
- </tr>
+
      <tr>
  
-  <td> <input type="submit" value="预约"></td>
+  <td>     <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+
+        <button type="submit" class="btn btn-primary">预约</button>
+      </div>
+      </div></td>
  </tr>
 </table>
 

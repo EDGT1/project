@@ -1,10 +1,64 @@
-﻿<html>
+﻿<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>本科生导师互选系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Le styles -->
+  <link href="http://cs-mentor.qiniudn.com/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/todc-bootstrap.css" rel="stylesheet">
+  <link href="http://cs-mentor.qiniudn.com/css/sticky-footer.css" rel="stylesheet">
+  <style type="text/css">
 
-<body  background="/site_media/02.gif">
+  </style>
+     
+
+
+  <script type="text/javascript" async="" src="./media/50614"></script><script src="./media/jquery.min.js"></script>
+  <script src="./media/bootstrap.min.js"></script>
+
+</head>
+         
+  <body   >
+
+<div id="wrap">
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+        <a class="navbar-brand" href="/teacher/"><strong>本科生预约导师系统</strong></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav">
+      <li class=""><a href="/teacher/">个人信息</a></li>
+    <li class=""><a href="/teacher1/">科学研究</a></li>
+	 <li class=""> <a href="/teacher2/">论文专著</a></li>
+
+    <li class=""><a href="/jiancha/">查看预约</a></li>
+	<li class=""><a href="/changepassword/">修改密码</a></li>
+	<li class=""><a href="/cha/">修改行程</a></li>
+  </ul>
+  <p class="navbar-text pull-right"> {{book.username}}您好！
+ <a href="/logout/" class="navbar-link">退出登录</a></p>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://mentor.sinaapp.com/student/info#"></a></li>
+  </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<body  background="">
 
 <form  action = "/teacher3/"  method="post">
 {% csrf_token %}
-   <a href="/cha/">查看其它日程</a>
+
   <fieldset>
     <legend>日程安排</legend>
 <table border="1">
@@ -15,54 +69,103 @@
   <td >周三</td>
   <td >周四</td>
   <td >周五</td>
+  <td >周六</td>
+  <td >周日</td>
 </tr>
 <tr>
 
   <th background="02.gif">8:00-10:00</th>
-  <td><input type="text" name="weekonefirst" value="{{date.weekonefirst}}"></td>
-  <td><input type="text" name="weektwofirst" value="{{date.weektwofirst}}" ></td>
-  <td><input type="text" name="weekthreefirst" value="{{date.weekthreefirst}}" ></td>
-  <td><input type="text" name="weekfourfirst"  value="{{date.weekfourfirst}}"></td>
-  <td><input type="text" name="weekfivefirst" value="{{date.weekfivefirst}}"></td>
+  <td><input type="text" name="weekonefirst" value="{{date.weekonefirst}}" ><select name="week11" > <option >{{date.week11}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weektwofirst" value="{{date.weektwofirst}}" ><select name="week21" > <option >{{date.week21}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekthreefirst" value="{{date.weekthreefirst}}" ><select name="week31" > <option >{{date.week31}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfourfirst"  value="{{date.weekfourfirst}}"><select name="week41" > <option >{{date.week41}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfivefirst" value="{{date.weekfivefirst}}"><select name="week51" > <option >{{date.week51}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksixfirst" value="{{date.weeksixfirst}}"><select name="week61" > <option >{{date.week61}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksevenfirst" value="{{date.weeksevenfirst}}"><select name="week71" > <option >{{date.week71}}</option> <option >忙</option>
+  <option >不忙</option></td>
 </tr>
 <tr>
   <th background="02.gif">10:00-12:00</th>
-  <td><input type="text" name="weekonesecond" value="{{date.weekonesecond}}"></td>
-  <td><input type="text" name="weektwosecond" value="{{date.weektwosecond}}"></td>
-  <td><input type="text" name="weekthreesecond" value="{{date.weekthreesecond}}"></td>
-  <td><input type="text" name="weekfoursecond" value="{{date.weekfoursecond}}"></td>
-  <td><input type="text" name="weekfivesecond" value="{{date.weekfivesecond}}"></td>
-
+  <td><input type="text" name="weekonesecond" value="{{date.weekonesecond}}"><select name="week12" > <option >{{date.week12}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weektwosecond" value="{{date.weektwosecond}}"><select name="week22" > <option >{{date.week22}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekthreesecond" value="{{date.weekthreesecond}}"><select name="week32" > <option >{{date.week32}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfoursecond" value="{{date.weekfoursecond}}"><select name="week42" > <option >{{date.week42}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfivesecond" value="{{date.weekfivesecond}}"><select name="week52" > <option >{{date.week52}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksixsecond" value="{{date.weeksixsecond}}"><select name="week62" > <option >{{date.week62}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksevensecond" value="{{date.weeksevensecond}}"><select name="week72" > <option >{{date.week72}}</option> <option >忙</option>
+  <option >不忙</option></td>
 </tr>
 <tr>
   <th background="02.gif">14:00-16:00</th>
-  <td><input type="text" name="weekonethird" value="{{date.weekonethird}}"></td>
-  <td><input type="text" name="weektwothird" value="{{date.weektwothird}}"></td>
-  <td><input type="text" name="weekthreethird" value="{{date.weekthreethird}}"></td>
-  <td><input type="text" name="weekfourthird" value="{{date.weekfourthird}}"></td>
-  <td><input type="text" name="weekfivethird" value="{{date.weekfivethird}}"></td>
+  <td><input type="text" name="weekonethird" value="{{date.weekonethird}}"><select name="week13" > <option >{{date.week13}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weektwothird" value="{{date.weektwothird}}"><select name="week23" > <option >{{date.week23}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekthreethird" value="{{date.weekthreethird}}"><select name="week33" > <option >{{date.week33}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfourthird" value="{{date.weekfourthird}}"><select name="week43" > <option >{{date.week43}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfivethird" value="{{date.weekfivethird}}"><select name="week53" > <option >{{date.week53}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksixthird" value="{{date.weeksixthird}}"><select name="week63" > <option >{{date.week63}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekseventhird" value="{{date.weekseventhird}}"><select name="week73" > <option >{{date.week73}}</option> <option >忙</option>
+  <option >不忙</option></td>
 
 </tr>
 <tr>
   <th background="02.gif">16:00-18:00</th>
-  <td><input type="text" name="weekonefourth" value="{{date.weekonefourth}}"></td>
-  <td><input type="text" name="weektwofourth" value="{{date.weektwofourth}}"></td>
-  <td><input type="text" name="weekthreefourth" value="{{date.weekthreefourth}}"></td>
-  <td><input type="text" name="weekfourfourth" value="{{date.weekfourfourth}}"></td>
-  <td><input type="text" name="weekfivefourth" value="{{date.weekfivefourth}}"></td>
-
+  <td><input type="text" name="weekonefourth" value="{{date.weekonefourth}}"><select name="week14" > <option >{{date.week14}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weektwofourth" value="{{date.weektwofourth}}"><select name="week24" > <option >{{date.week24}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekthreefourth" value="{{date.weekthreefourth}}"><select name="week34" > <option >{{date.week34}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfourfourth" value="{{date.weekfourfourth}}"><select name="week44" > <option >{{date.week44}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfivefourth" value="{{date.weekfivefourth}}"><select name="week54" > <option >{{date.week54}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksixfourth" value="{{date.weeksixfourth}}"><select name="week64" > <option >{{date.week64}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksevenfourth" value="{{date.weeksevenfourth}}"><select name="week74" > <option >{{date.week74}}</option> <option >忙</option>
+  <option >不忙</option></td>
 </tr>
 <tr>
   <th background="02.gif">19:00-21 :00</th>
-  <td><input type="text" name="weekonefifth" value="{{date.weekonefifth}}"></td>
-  <td><input type="text" name="weektwofifth" value="{{date.weektwofifth}}"></td>
-  <td><input type="text" name="weekthreefifth" value="{{date.weekthreefifth}}"></td>
-  <td><input type="text" name="weekfourfifth" value="{{date.weekfourfifth}}"></td>
-  <td><input type="text" name="weekfivefifth" value="{{date.weekfivefifth}}"></td>
-
+  <td><input type="text" name="weekonefifth" value="{{date.weekonefifth}}"><select name="week15" > <option >{{date.week15}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weektwofifth" value="{{date.weektwofifth}}"><select name="week25" > <option >{{date.week25}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekthreefifth" value="{{date.weekthreefifth}}"><select name="week35" > <option >{{date.week35}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfourfifth" value="{{date.weekfourfifth}}"><select name="week45" > <option >{{date.week45}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weekfivefifth" value="{{date.weekfivefifth}}"><select name="week55" > <option >{{date.week55}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksixfifth" value="{{date.weeksixfifth}}"><select name="week65" > <option >{{date.week65}}</option> <option >忙</option>
+  <option >不忙</option></td>
+  <td><input type="text" name="weeksevenfifth" value="{{date.weeksevenfifth}}"><select name="week75" > <option >{{date.week75}}</option> <option >忙</option>
+  <option >不忙</option></td>
 </tr>
 </table>
-<input type="submit" value="修改"> <input type="reset" value="重填">
+<div class="form-group">
+     
+
+        <button type="submit" class="btn btn-primary">修改</button>
+    
+      </div>
   </fieldset>
 
 </form>
